@@ -1,0 +1,190 @@
+/* Base variables */
+:root {
+  --pacioli-bg: #ffffff;
+  --pacioli-surface: #f9fafb;
+  --pacioli-border: #e2e8f0;
+  --pacioli-text: #0f172a;
+  --pacioli-text-muted: #64748b;
+  --pacioli-primary: #3b82f6;
+  --pacioli-primary-hover: #2563eb;
+  --pacioli-success: #10b981;
+  --pacioli-success-bg: #d1fae5;
+  --pacioli-danger: #ef4444;
+  --pacioli-danger-bg: #fee2e2;
+  --pacioli-radius: 12px;
+  --pacioli-font: 'Inter', system-ui, -apple-system, sans-serif;
+  --pacioli-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --pacioli-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --pacioli-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark mode theme */
+.pacioli-theme-dark {
+  --pacioli-bg: #0f172a;
+  --pacioli-surface: #1e293b;
+  --pacioli-border: #334155;
+  --pacioli-text: #f8fafc;
+  --pacioli-text-muted: #94a3b8;
+  --pacioli-primary: #3b82f6;
+  --pacioli-primary-hover: #60a5fa;
+  --pacioli-success: #10b981;
+  --pacioli-success-bg: rgba(16, 185, 129, 0.15);
+  --pacioli-danger: #ef4444;
+  --pacioli-danger-bg: rgba(239, 68, 68, 0.15);
+  --pacioli-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --pacioli-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+}
+
+/* Core Container */
+.pacioli-container {
+  font-family: var(--pacioli-font);
+  background-color: var(--pacioli-bg);
+  color: var(--pacioli-text);
+  border-radius: var(--pacioli-radius);
+  transition: var(--pacioli-transition);
+}
+
+/* Base Card Style */
+.pacioli-card {
+  background-color: var(--pacioli-surface);
+  border: 1px solid var(--pacioli-border);
+  border-radius: var(--pacioli-radius);
+  padding: 1.5rem;
+  box-shadow: var(--pacioli-shadow-sm);
+  transition: var(--pacioli-transition);
+}
+
+.pacioli-card:hover {
+  box-shadow: var(--pacioli-shadow);
+}
+
+/* Typography */
+.pacioli-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--pacioli-text);
+  letter-spacing: -0.025em;
+}
+
+.pacioli-subtitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--pacioli-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Table Styles */
+.pacioli-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--pacioli-border);
+  border-radius: var(--pacioli-radius);
+  background-color: var(--pacioli-surface);
+}
+
+.pacioli-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.pacioli-table th {
+  padding: 1rem;
+  font-weight: 500;
+  color: var(--pacioli-text-muted);
+  border-bottom: 1px solid var(--pacioli-border);
+  white-space: nowrap;
+}
+
+.pacioli-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--pacioli-border);
+  color: var(--pacioli-text);
+}
+
+.pacioli-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pacioli-table tbody tr {
+  transition: var(--pacioli-transition);
+}
+
+.pacioli-table tbody tr:hover {
+  background-color: rgba(var(--pacioli-border), 0.05); /* Very subtle hover */
+}
+
+/* Badge Styles */
+.pacioli-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.pacioli-badge-success {
+  background-color: var(--pacioli-success-bg);
+  color: var(--pacioli-success);
+}
+
+.pacioli-badge-danger {
+  background-color: var(--pacioli-danger-bg);
+  color: var(--pacioli-danger);
+}
+
+.pacioli-amount-credit {
+  color: var(--pacioli-success);
+  font-weight: 500;
+}
+
+.pacioli-amount-debit {
+  color: var(--pacioli-danger);
+  font-weight: 500;
+}
+
+/* Inputs & Form */
+.pacioli-input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border-radius: calc(var(--pacioli-radius) - 4px);
+  border: 1px solid var(--pacioli-border);
+  background-color: var(--pacioli-bg);
+  color: var(--pacioli-text);
+  font-family: inherit;
+  font-size: 0.875rem;
+  transition: var(--pacioli-transition);
+}
+
+.pacioli-input:focus {
+  outline: none;
+  border-color: var(--pacioli-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Buttons */
+.pacioli-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  border-radius: calc(var(--pacioli-radius) - 4px);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--pacioli-transition);
+  cursor: pointer;
+  border: none;
+}
+
+.pacioli-btn-primary {
+  background-color: var(--pacioli-primary);
+  color: #ffffff;
+}
+
+.pacioli-btn-primary:hover {
+  background-color: var(--pacioli-primary-hover);
+  transform: translateY(-1px);
+}
